@@ -32,14 +32,14 @@ const Category: FC<InputProps> = ({ label,request }) => {
   }, []);
   return (
     <div className="flex flex-col gap-[50px]">
-      <div className="flex">
+      <div className="flex flex-row max-[360px]:flex-col">
         <span className=" flex-1 text-[25px] font-semibold">{label}</span>
-        <div className="flex gap-[10px] items-center">
+        <div className="flex gap-[10px] items-center cursor-pointer">
           <span className=" font-semibold text-[16px]">see more</span>
           <Image width={13} height={21} src={arrowIcon} alt="arrow-icon" />
         </div>
       </div>
-      <div className=" flex gap-[25px]">
+      <div className=" grid px-[20%] sm:grid-cols-1 sm:px-[20%] md:grid-cols-2 md:px-[7%] lg:grid-cols-3 lg:px-[5%] xl:grid-cols-4 xl:px-[0%]  gap-[25px]">
         {categoryData &&
           categoryData.map((data) => (
             <CategoryCard dataDetail={data} key={data.id} />

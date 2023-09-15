@@ -28,6 +28,22 @@
   /* #endregion  /**======== Primary Color =========== */
 }
 
-body{
-  background-repeat: no-repeat;
+body {
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.theaterSteps .ant-steps-item.ant-steps-item-finish .ant-steps-item-tail::after {
+  background-color: black;
+}
+
+.theaterSteps .ant-steps-item.ant-steps-item-finish .ant-steps-icon-dot {
+  background: black !important;
+}
+.theaterSteps .ant-steps-item.ant-steps-item-process .ant-steps-icon-dot {
+  background: black !important;
 }
