@@ -1,15 +1,13 @@
 "use client";
 import React, { FC, InputHTMLAttributes, useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
-import requests from "../_utils/request";
 import { getRandomElements } from "../_utils/helper";
-import arrowIcon from "../_assets/arrowRight.png";
-import Image from "next/image";
+import { ArrowRightOutlined } from "@ant-design/icons";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   request: string;
 }
-const Category: FC<InputProps> = ({ label,request }) => {
+const Category: FC<InputProps> = ({ label, request }) => {
   const [categoryData, setCategoryData] = useState<any[]>([]);
   useEffect(() => {
     async function getCategoryData() {
@@ -33,10 +31,14 @@ const Category: FC<InputProps> = ({ label,request }) => {
   return (
     <div className="flex flex-col gap-[50px]">
       <div className="flex flex-row max-[360px]:flex-col">
-        <span className=" flex-1 text-[25px] font-semibold">{label}</span>
+        <span className=" flex-1 text-[25px] font-semibold dark:text-white">
+          {label}
+        </span>
         <div className="flex gap-[10px] items-center cursor-pointer">
-          <span className=" font-semibold text-[16px]">see more</span>
-          <Image width={13} height={21} src={arrowIcon} alt="arrow-icon" />
+          <span className=" font-semibold text-[16px] dark:text-white">
+            see more
+          </span>
+          <ArrowRightOutlined className=" dark:text-white" />
         </div>
       </div>
       <div className=" grid px-[20%] sm:grid-cols-1 sm:px-[20%] md:grid-cols-2 md:px-[7%] lg:grid-cols-3 lg:px-[5%] xl:grid-cols-4 xl:px-[0%]  gap-[25px]">

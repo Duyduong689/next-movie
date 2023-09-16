@@ -8,7 +8,7 @@ import new4 from "../_assets/new4.png";
 import Image from "next/image";
 function News() {
   return (
-    <div className="flex flex-col sm:items-center xl:items-start">
+    <div className="flex flex-col sm:items-center xl:items-start dark:text-white">
       <h2 className=" text-[25px] font-medium">Latest news</h2>
       <div className=" flex gap-[51px] mt-[50px] flex-col items-center 2xl:flex-row  ">
         <div className=" relative w-fit flex-shrink-0">

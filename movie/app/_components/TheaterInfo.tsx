@@ -7,11 +7,11 @@ import News from "./News";
 function TheaterInfo() {
   return (
     <div>
-      <span className=" text-[25px] font-medium">
+      <span className=" text-[25px] font-medium dark:text-white">
         Pearls of Azerbaijani cinema
       </span>
       <Steps
-        className="theaterSteps text-black mt-[20px] md:mt-[88px]"
+        className="theaterSteps text-black dark:text-white mt-[20px] md:mt-[88px]"
         progressDot
         current={1}
         items={[
@@ -39,7 +39,7 @@ function TheaterInfo() {
         ]}
       />
       <div className=" flex flex-col gap-[40px] lg:gap-[110px] pt-[20px] md:pt-[82px] px-[5%] lg:px-[100px]">
-        <div className=" w-full flex justify-between items-center flex-col sm:flex-col gap-[20px] xl:flex-row xl:gap-[10px] ">
+        <div className=" w-full flex justify-between items-center flex-col sm:flex-col gap-[20px] xl:flex-row xl:gap-[10px] dark:text-white">
           <Image src={imageArshin} width={558} height={432} alt="arshin" />
           <div>
             <span className=" italic text-[11px]">OPERETTA</span>
