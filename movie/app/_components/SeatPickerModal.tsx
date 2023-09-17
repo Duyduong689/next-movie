@@ -28,10 +28,10 @@ const SeatPickerModal: FC<InputProps> = ({
     }
   }, [selectedSeats]);
   return (
-    <div className="absolute w-full h-full flex items-center justify-center  z-30">
-      <div className="text-white bg-black w-[409px] h-[524px] flex justify-start items-center flex-col py-[21px] px-[62px]">
+    <div className="absolute w-fit h-fit m-auto inset-0 top-[50%] md:top-0 md:w-full md:h-full flex items-center justify-center z-30">
+      <div className="text-white bg-black max-w-[409px] md:h-[524px] flex justify-start items-center flex-col py-[21px] px-[62px]">
         <span className=" text-[20px] uppercase">Selected seats</span>
-        <ul className="flex flex-col max-h-[264px] gap-[24px] mt-[44px]">
+        <ul className="flex flex-col overflow-y-auto max-h-[200px] md:max-h-[264px] gap-[24px] mt-[44px]">
           {selectedSeats?.map((seat, index) => {
             return (
               <li className="flex gap-[20px]" key={index}>

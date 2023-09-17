@@ -9,14 +9,14 @@ import TheaterInfo from "./_components/TheaterInfo";
 export default function Home() {
   return (
     <main className="h-screen ">
-      <div className="overlay w-full  h-[873px] absolute bg-gradient-to-b from-gray-700 to-gray-900"></div>
-      <div className="container max-w-[1516px] m-auto px-[5%]">
+      <div className="overlay w-full  h-[600px] md:h-[873px] absolute bg-gradient-to-b from-gray-700 to-gray-900"></div>
+      <div className="container max-w-[1816px] m-auto px-[5%]">
         <Header />
       </div>
       <section className="max-w-[1920px] m-auto flex flex-col gap-[10px]">
         <EmphasizeLabel />
         <Carousel />
-        <div className="container max-w-[1516px] m-auto mt-[150px] md:mt-[200px] flex flex-col gap-[110px] px-[5%]">
+        <div className="container max-w-[1816px] m-auto flex flex-col gap-[110px] px-[5%]">
           <Category
             request={requests.fetchComedyMovies}
             label="Currently playing"

@@ -9,9 +9,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const CategoryCard: FC<InputProps> = ({ dataDetail }) => {
   return (
     <div
-      className={`relative cursor-pointer flex-1 h-[380px] sm:h-[430px] shadow-md rounded-[5px]`}
+      className={`relative cursor-pointer flex-1 h-[380px] sm:h-[530px] shadow-md rounded-[5px]`}
     >
-      <div className="title absolute z-[5] px-[7%] w-full h-full flex flex-col gap-[10px] bg-[rgba(57,56,56,0.16)]">
+      <div className="title absolute z-[5] px-[7%] w-full h-full flex flex-col gap-[10px] bg-[rgba(29,29,29,0.15)]">
         <div className="flex flex-col justify-end gap-1 h-full items-start mb-[20px]">
           <span className=" text-white font-semibold text-[22px]">
             {dataDetail.title || dataDetail.name}

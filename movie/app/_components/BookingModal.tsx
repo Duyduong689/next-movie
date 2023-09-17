@@ -54,16 +54,16 @@ const Modal: FC<InputProps> = ({ setShowModal, dataDetail }) => {
   }, [selectedSeats]);
   return (
     <>
-      <div className=" absolute inset-0 w-full flex bg-gradient-to-b from-gray-700 to-gray-900 z-20">
+      <div className=" absolute inset-0 w-full flex flex-col md:flex-row bg-gradient-to-b from-gray-700 to-gray-900 z-20">
         <CloseOutlined
           className=" cursor-pointer absolute right-[10px] top-[10px] text-[40px] text-white"
           onClick={() => {
             if (setShowModal) setShowModal(false);
           }}
         />
-        <div className="flex-1 relative bg-[rgba(0,0,0,0.8)]">
+        <div className="md:flex-1 md:relative md:bg-[rgba(0,0,0,0.8)] ">
           <Image
-            className="rounded-[5px] object-contain relative"
+            className="rounded-[5px] object-contain relative hidden md:block"
             src={`${baseUrl}${
               dataDetail?.poster_path || dataDetail?.backdrop_path
             }`}
@@ -81,24 +81,38 @@ const Modal: FC<InputProps> = ({ setShowModal, dataDetail }) => {
         </div>
         <div className="flex-1">
           <div className=" px-[5%]">
-            <div className="title mb-[10px] z-[5] w-full bg-[rgba(57,56,56,0.16)]">
-              <div className="flex flex-col justify-start gap-[5px] h-full items-start mt-[20px]">
+            <div className="title mb-[20px] z-[5] w-full bg-[rgba(57,56,56,0.16)]">
+              <div className="flex flex-col justify-start gap-[5px] h-full items-start mt-[10px] md:mt-[20px]">
                 <span className=" text-white font-semibold text-[34px]">
                   {dataDetail?.title || dataDetail?.name}
                 </span>
-                <span className=" text-white text-[26px]">
-                  {convertDateFormat(dataDetail?.release_date ?? "")}
-                </span>{" "}
-                <div className=" px-[10px] py-[5px] rounded-[5px] bg-[rgba(187,186,186,0.44)] text-white font-semibold text-[24px]">
-                  <span>{dataDetail?.original_language}</span>
+                <div className=" flex gap-[10px] items-center md:flex-col md:items-start">
+                  <span className=" text-white text-[26px]">
+                    {convertDateFormat(dataDetail?.release_date ?? "")}
+                  </span>{" "}
+                  <div className=" px-[10px] py-[5px] rounded-[5px] bg-[rgba(187,186,186,0.44)] text-white font-semibold text-[24px]">
+                    <span>{dataDetail?.original_language}</span>
+                  </div>
                 </div>
               </div>
             </div>
             <SeatPicker
-              setSelectedSeats={setSelectedSeats}
               seatRowArray={seatRowArray}
               setSeatRowArray={setSeatRowArray}
             />
+            <div className=" w-full flex justify-center items-center">
+              <div className="rounded-[5px] relative w-[250px] h-[450px]">
+                <Image
+                  className="rounded-[5px] object-contain"
+                  src={`${baseUrl}${
+                    dataDetail?.poster_path || dataDetail?.backdrop_path
+                  }`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  alt={"modal image"}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

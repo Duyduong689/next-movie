@@ -18,27 +18,29 @@ const CarouselCard: FC<InputProps> = ({
   return (
     <div
       className={`relative flex-shrink-0 cursor-pointer shadow-md rounded-[5px] ${
-        active ? "w-[320px] h-[453px]" : "w-[138px] h-[198px]"
+        active ? "w-[230px] h-[300px] md:w-[320px] md:h-[453px]" : "w-[138px] h-[198px]"
       }`}
     >
       {active && (
-        <div className="booking absolute z-[5] pt-[70%] px-[10px] w-full h-full flex flex-col justify-center items-center gap-[10px] bg-[rgba(0,0,0,0.3)]">
-          <span className=" text-white font-semibold text-center text-[20px]">
-            {dataDetail.title || dataDetail.name}
-          </span>
-          <Button
-            className=" w-fit"
-            type="primary"
-            danger
-            onClick={() => {
-              if (setShowModal && setMovieModal) {
-                setShowModal(true);
-                setMovieModal(dataDetail);
-              }
-            }}
-          >
-            Book Now
-          </Button>
+        <div className="booking absolute z-[5] px-[10px] w-full h-full flex flex-col justify-center items-center gap-[10px] bg-[rgba(0,0,0,0.3)]">
+          <div className="flex flex-col justify-end gap-1 h-full items-center mb-[30px]">
+            <span className=" text-white font-semibold text-center text-[20px]">
+              {dataDetail.title || dataDetail.name}
+            </span>
+            <Button
+              className=" w-fit"
+              type="primary"
+              danger
+              onClick={() => {
+                if (setShowModal && setMovieModal) {
+                  setShowModal(true);
+                  setMovieModal(dataDetail);
+                }
+              }}
+            >
+              Book Now
+            </Button>
+          </div>
         </div>
       )}
       <Image

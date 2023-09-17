@@ -8,12 +8,10 @@ import {
 import { TabletFilled } from "@ant-design/icons";
 import { SeatRow, SelectedSeat, SelectedSeatView } from "../_utils/interfaces";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  setSelectedSeats: (data: SelectedSeatView[]) => void;
   seatRowArray: SeatRow[];
   setSeatRowArray: (data: SeatRow[]) => void;
 }
 const SeatPicker: FC<InputProps> = ({
-  setSelectedSeats,
   seatRowArray,
   setSeatRowArray,
 }) => {
@@ -27,7 +25,7 @@ const SeatPicker: FC<InputProps> = ({
   };
   return (
     <div className=" flex flex-col items-center gap-[40px] justify-center">
-      <div className="date-picker flex flex-col items-center w-[60%] text-white">
+      <div className="date-picker  hidden md:flex flex-col items-center w-[60%] text-white">
         <span className=" text-[25px] ">Date</span>
         <ul className=" flex gap-[23px] mt-[34px]">
           {datePickerArray.map((item) => (
@@ -41,7 +39,7 @@ const SeatPicker: FC<InputProps> = ({
         </ul>
         <hr className=" w-full h-1 mt-[52px]" />
       </div>
-      <div className="date-picker flex flex-col items-center w-[80%] text-white">
+      <div className="date-picker hidden md:flex flex-col items-center w-[80%] text-white">
         <span className=" text-[25px] ">Time</span>
         <ul className=" flex gap-[23px] mt-[34px]">
           {timePickerArray.map((item) => (
