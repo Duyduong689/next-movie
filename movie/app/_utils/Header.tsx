@@ -7,16 +7,20 @@ import userIcon from "../_assets/user-icon.png";
 import Image from "next/image";
 function Header() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(
-    localStorage && localStorage?.getItem("darkMode") == "1" ? true : false
+    typeof window !== 'undefined' && localStorage?.getItem("darkMode") == "1" ? true : false
   );
   useEffect(() => {
-    let html = document.querySelector("html");
-    if (isDarkMode) {
-      html?.classList.add("dark");
-      localStorage.setItem("darkMode", "1");
-    } else {
-      html?.classList.remove("dark");
-      localStorage.setItem("darkMode", "0");
+    if (typeof window !== 'undefined') {
+      // Perform localStorage action
+      // const item = localStorage.getItem('key')
+      let html = document.querySelector("html");
+      if (isDarkMode) {
+        html?.classList.add("dark");
+        localStorage.setItem("darkMode", "1");
+      } else {
+        html?.classList.remove("dark");
+        localStorage.setItem("darkMode", "0");
+      }
     }
   }, [isDarkMode]);
   return (

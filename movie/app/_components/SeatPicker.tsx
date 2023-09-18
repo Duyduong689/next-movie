@@ -9,7 +9,7 @@ import { TabletFilled } from "@ant-design/icons";
 import { SeatRow, SelectedSeat, SelectedSeatView } from "../_utils/interfaces";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   seatRowArray: SeatRow[];
-  setSeatRowArray: (data: SeatRow[]) => void;
+  setSeatRowArray: React.Dispatch<React.SetStateAction<SeatRow[]>>;
 }
 const SeatPicker: FC<InputProps> = ({
   seatRowArray,

@@ -5,7 +5,7 @@ import { Button } from "antd";
 import { seatPrice } from "../_constants/constants";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   selectedSeats?: SelectedSeatView[];
-  setSeatRowArray?: (data: SeatRow[]) => void;
+  setSeatRowArray?: React.Dispatch<React.SetStateAction<SeatRow[]>>;
   setIsShowOrderFormModal?: (data: boolean) => void;
 }
 const SeatPickerModal: FC<InputProps> = ({
